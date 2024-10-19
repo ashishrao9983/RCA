@@ -1,0 +1,516 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Protest Riot", sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.page {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.main {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('') no-repeat center center; /* Add your background image URL here */
+    background-size: cover;
+    filter: blur(0px);
+    z-index: -1;
+}
+
+.nav {
+    height: 14vh;
+    width: 100vw;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: 0px 10px 40px -20px black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.left-nav {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 5%;
+}
+
+.left-nav img {
+    height: 70%;
+    border-radius: 50%;
+}
+.right-nav {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    right: 4%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navi {
+    display: flex;
+    align-items: center;
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin: 20px;
+
+}
+
+.nav-list a {
+    color:black;
+    text-decoration: none;
+}
+
+.nav-list a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack lines */
+    cursor: pointer;
+    margin-left: 20px; /* Space from the logo */
+    position: absolute;
+    right: 5%;
+}
+
+.hamburger div {
+    background-color:black;
+    height: 3px;
+    margin: 3px 0;
+    width: 25px; /* Width of the hamburger lines */
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: white; /* Background for mobile menu */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: -40%;
+        width: 50%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+ 
+ 
+
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+    .navi.active{
+        display: flex;
+    }
+  
+}
+
+@media (max-width:768px ){
+    .right-nav{
+        display: none;
+    }
+    .left-nav img{
+        height: 60%;
+    }
+    .nav{
+        height: 10vh;
+    }
+    .left-nav{
+        left: 10%;
+    }
+
+}
+.right-nav h4 a {
+    text-decoration: none;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: rgba(16, 22, 43, 0.65);
+    z-index: 102;
+}
+
+.right-nav h4 {
+    border: 1px solid black;
+    padding: 1.2vh 3vh;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    margin: 0px 20px;
+}
+
+.right-nav h4::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: -300%;
+    border-radius: 25px;
+    transition: all ease 0.6s;
+}
+
+.right-nav h4:hover::after {
+    bottom: 0;
+}
+
+.right-nav h4:hover a { 
+    color: white;
+}
+
+.heading {
+    height: 950vh;
+    width: 950vh;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(255, 111, 0), rgb(213, 216, 7));
+    position: absolute;
+    left: 50%;
+    top: -420%;
+    transform: translate(-50%, -50%);
+ }
+ 
+ .circle {
+    position: absolute;
+    bottom: 5vh; /* Position at the bottom of the .heading */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    height: 45vh; /* Adjust height as needed */
+    width: 75vw; /* Adjust width as needed */
+
+   /* If you want it to be circular */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+.circle h5{
+    font-size: 75px;
+    text-shadow: 0px 0px 40px black;
+}
+@media (max-width:768px){
+    .circle h5{
+        font-size: 50px;
+        text-shadow: 0px 0px 40px black;
+
+    }
+    .heading{
+        height: 200vh;
+        width: 200vh;
+        top: -50%;
+    }
+    .circle{
+        bottom: 0vh ;
+    }
+}
+.page1{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    top: 60vh;
+    position: relative;
+    height: 2850px;
+}
+.image-container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.image{
+    height:350px;
+    width: 250px;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 50px
+  
+}
+.picture{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 50%;
+   z-index: 2;
+}
+.picture img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: orange;
+    transition: all ease .5s;
+
+}
+.picture:hover img{
+    height: 80%;
+    width: 80%;
+}
+.name{
+    font-size: 1.5rem;
+    font-weight: ;
+    margin: 20px 0px;
+    color: #00000080;
+
+}
+.mail-link{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -25%;
+    position: absolute;
+    background-color: orange;
+    transition: all ease .5s;
+}
+.mail-link img{
+    height: 50px;
+    width: 50px;
+}
+.mail-link li{
+    list-style: none;
+}
+.image:hover .mail-link{
+    bottom: -0;
+}
+.transi{
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    background-color: orange;
+    bottom: 100%;
+    border-radius: 50%;
+    z-index: 1;
+    transition: all ease .5s;
+}
+.image:hover .transi{
+    bottom: 50%;
+}
+@media (max-width:768px){
+    .image-container{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .page1{
+        height: 7250px;
+    }
+    
+}
+.position h6{
+    font-size: 1rem;
+    font-weight: 200;
+}
+.footer{
+    height: 45vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    background: linear-gradient(90deg, rgb(255, 111, 0), rgb(213, 216, 7))
+}
+
+@media (max-height:900px){
+    .footer
+    {
+        height: 50vh;
+    }
+}
+.left-footer{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.right-footer{
+    height: 100%;
+    width: 50%;
+}
+.image2 img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.image2{
+    height: 90px;
+    width: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-container{
+    height: 110px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+}
+.left-footer h4{
+    bottom: 15vh;
+    position: absolute;
+    font-size: 200%;
+}
+.contact-us{
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0px;
+    position: relative;
+  
+}
+.right-footer{
+    display: flex;
+}
+.events1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0px;
+    position: relative;
+
+}
+.events1 ul li{
+    list-style: none;
+    margin: 25px 0px;
+}
+.events1 h5{
+    font-size: 1.5rem;
+   
+   
+}
+.contact-us ul li{
+    list-style: none;
+    color: black;
+    margin: 25px 0px;
+}
+.contact-us ul li a{
+    text-decoration:  none;
+    color: black;
+}
+.contact-us ul li h5{
+    font-size: 1.5rem;
+}
+.contact-us ul li p span{
+    display: block;
+    margin: 25px 0px;
+}
+@media (max-width:768px ){
+    .footer{
+        flex-direction: column;
+        height:80vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .left-footer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 40%;
+        border-bottom: 1px solid black;
+
+    }
+    .left-footer h4{
+        font-size: 1.4rem;
+        bottom: 10%;
+    }
+    .right-footer{
+        width: 100%;
+        height: 70%;
+        padding: 0px 15px;
+    }
+    .contact-us .events1{
+        margin: 20px 0;
+    }
+    .img-container{
+        height: 70px;
+        width: 70px;
+        
+    }
+    .image2{
+        height: 60px;
+        width: 60px;
+    }
+    .image2 img{
+        height: 65px;
+        width: 65px;
+    }
+    .contact-us   ul li h5{
+        font-size: 1.2rem;
+    }
+    .events1  ul li h5{
+        font-size: 1.2rem;
+    }
+    
+   .events1{
+    margin: 5vh 0;
+   }
+   .contact-us{
+    margin: 5vh;
+   }
+}
+.rights{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: .8rem;
+}
+
